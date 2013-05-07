@@ -1,4 +1,7 @@
 class ContentTagsController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   # GET /content_tags
   # GET /content_tags.json
   def index
