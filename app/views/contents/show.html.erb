@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @content.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @content.description %>
+</p>
+
+<p>
+  <b>Html:</b>
+  <%= @content.html %>
+</p>
+
+<p>
+  <b>Css:</b>
+  <%= @content.css %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @content.deleted %>
+</p>
+
+<p>
+  <b>Visible:</b>
+  <%= @content.visible %>
+</p>
+
+<p>
+  <b>Created on:</b>
+  <%= @content.created_on %>
+</p>
+
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>
