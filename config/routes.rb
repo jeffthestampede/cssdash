@@ -1,4 +1,21 @@
 Cssdash::Application.routes.draw do
+
+  resources :comments
+
+
+  resources :favorites
+
+
+  resources :content_tags
+
+
+  resources :contents
+
+
+  devise_for :users
+
+  root :to => 'welcome#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +65,7 @@ Cssdash::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  #
 
   # See how all your routes lay out with "rake routes"
 
