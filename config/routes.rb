@@ -1,20 +1,12 @@
 Cssdash::Application.routes.draw do
 
   resources :comments
-
-
   resources :favorites
-
-
   resources :content_tags
-
-
   resources :contents
-
-
   devise_for :users
 
-  root :to => 'welcome#index'
+  root :to => 'contents#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
