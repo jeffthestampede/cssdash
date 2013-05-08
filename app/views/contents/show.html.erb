@@ -1,8 +1,9 @@
+<%= render "layouts/navigation" %>
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Title:</b>
-  <%= @content.title %>
+  <%= @content.title %> by <a href="/users/<%= @content.user.id %>"><%= @content.user.username %></a>
 </p>
 
 <p>
@@ -11,12 +12,12 @@
 </p>
 
 <p>
-  <b>Html:</b>
+  <b>HTML:</b>
   <%= @content.html %>
 </p>
 
 <p>
-  <b>Css:</b>
+  <b>CSS:</b>
   <%= @content.css %>
 </p>
 
@@ -31,10 +32,17 @@
 </p>
 
 <p>
+  <b>Favorites:</b>
+  <%= @content.favorites %>
+</p>
+
+<p>
   <b>Created on:</b>
   <%= @content.created_on %>
 </p>
 
+<% if user_signed_in? && @content.user_id = current_user.id %>
+  <%= link_to 'Edit', edit_content_path(@content) %> |
+<% end %>
 
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+<%= link_to 'Back', root_path %>
