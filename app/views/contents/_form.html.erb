@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -28,16 +27,14 @@
     <%= f.text_area :css %>
   </div>
   <div class="field">
-    <%= f.label :deleted %><br />
-    <%= f.check_box :deleted %>
+    Tag(s):
+    <input type="text" name="content_tag_name"></input>
+    <%#= @content_tag.label :name %><br />
+    <%#= @content_tag.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :visible %><br />
     <%= f.check_box :visible %>
-  </div>
-  <div class="field">
-    <%= f.label :created_on %><br />
-    <%= f.date_select :created_on %>
   </div>
   <div class="actions">
     <%= f.submit %>
