@@ -11,11 +11,11 @@ Cssdash::Application.routes.draw do
   get '/contents/new', :to => 'contents#new', :as => 'new_content'
   post '/contents', :to => 'contents#create'
   # Edit content
-  get 'contents/:id/edit',  :to => 'contents#edit', :as => 'edit_content'
+  get '/contents/:id/edit',  :to => 'contents#edit', :as => 'edit_content'
   # Show content
-  get 'contents/:id', :to => 'contents#show', :as => 'content'
+  get '/contents/:id', :to => 'contents#show', :as => 'content'
   # Contributor profile
-  get 'users/:id', :to => 'contents#view_user'
+  get '/users/:id', :to => 'users#show'
   # About us
   get '/aboutus', :to => 'pages#aboutus'
 

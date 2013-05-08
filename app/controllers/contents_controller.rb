@@ -49,12 +49,10 @@ class ContentsController < ApplicationController
     @content = Content.new(params[:content])
     @content.visible = true;
     @content.deleted = false;
-    @content_tag = Content_tag.new
-    @content_tag.content_id = @content.id
+    @content.user_id = current_user.id;
 
     respond_to do |format|
       if @content.save
-        @content_tag.save
         format.html { redirect_to @content, notice: 'Content was successfully created.' }
         format.json { render json: @content, status: :created, location: @content }
       else
