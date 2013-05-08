@@ -8,12 +8,11 @@
 
 <div>
 <% @contents.each do |content| %>
-    <p>Title: <%= content.title %></p>
+    <p><%= link_to content.title, content %></p>
     <p>Description: <%= content.description %></p>
     <p>HTML: <%= content.html %></p>
     <p>CSS: <%= content.css %></p>
-    <p><a href="/users/<%= content.user_id %>"><%= User.find(content.user_id).username %></a></p>
-    <p>Contributor: <%= content.user_id %></p>
+    <p><a href="/users/<%= content.user.id %>"><%= content.user.username %></a></p>
     <p>Views: <%= content.views %></p>
     <p>Favorites: <%= content.favorites %></p>
     <%#= link_to 'Show', content %>
