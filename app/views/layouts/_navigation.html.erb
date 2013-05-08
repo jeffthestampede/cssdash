@@ -1,11 +1,23 @@
-<ul>
-<% if user_signed_in? %>
-  <li><%= current_user.username %></li>
-  <li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
-  <li><%= link_to("Logout", destroy_user_session_path, :method => "delete") %></li>
-<% else %>
-  <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-  <li><%= link_to("Login", new_user_session_path) %></li>
-<% end %>
-  <li><%= link_to("About Us", aboutus_path) %></li>
-  </ul>
+<div id="header">
+	<span id="logo">css stache</span>
+
+	<div id="nav-bar">
+	<ul>
+	<% if user_signed_in? %>
+  	<li><%= current_user.username %></li>
+  	<li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
+  	<li><%= link_to("Logout", destroy_user_session_path, :method => "delete") %></li>
+	<% else %>
+  	<li><%= link_to("Sign Up", new_user_registration_path) %></li>
+  	<li><%= link_to("Login", new_user_session_path) %></li>
+	<% end %>
+  	<li><%= link_to("About Us", aboutus_path) %></li>
+	</ul>
+
+	<div id="search-bar">
+    <input type="search" placeholder="Search for css">
+    <input type="image" id="search-button" value="search" src="http://www.clker.com/cliparts/z/1/T/u/9/2/search-icon.svg">
+  </div>
+	</div>
+	
+</div>
