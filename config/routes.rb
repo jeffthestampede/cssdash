@@ -1,12 +1,23 @@
 Cssdash::Application.routes.draw do
 
-  resources :comments
-  resources :favorites
-  resources :content_tags
-  resources :contents
+  # resources :comments
+  # resources :favorites
+  # resources :content_tags
+  # resources :contents
   devise_for :users
 
-  root :to => 'contents#index'
+  root :to => 'pages#index'
+  # Create new content
+  get '/contents/new', :to => 'contents#new', :as => 'new_content'
+  post '/contents', :to => 'contents#create'
+  # Edit content
+  get 'contents/:id/edit',  :to => 'contents#edit', :as => 'edit_content'
+  # Show content
+  get 'contents/:id', :to => 'contents#show', :as => 'content'
+  # Contributor profile
+  get 'users/:id', :to => 'contents#view_user'
+  # About us
+  get '/aboutus', :to => 'pages#aboutus'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
