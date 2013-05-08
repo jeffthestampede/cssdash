@@ -2,16 +2,19 @@ class ContentsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [:index, :show]
 
-  # GET /contents
-  # GET /contents.json
-  def index
-    @contents = Content.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @contents }
-    end
+  def view_user
   end
+
+  # # GET /contents
+  # # GET /contents.json
+  # def index
+  #   @contents = Content.all
+
+  #   respond_to do |format|
+  #     format.html # index.html.erb
+  #     format.json { render json: @contents }
+  #   end
+  # end
 
   # GET /contents/1
   # GET /contents/1.json
@@ -44,6 +47,9 @@ class ContentsController < ApplicationController
   # POST /contents.json
   def create
     @content = Content.new(params[:content])
+    @content.visible = true;
+    @content.deleted = false;
+    @content.user_id = current_user.id;
 
     respond_to do |format|
       if @content.save
