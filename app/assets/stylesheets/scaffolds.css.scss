@@ -1,32 +1,51 @@
+$light_grey: #f1f0ee;
+$dark_grey: #272623;
+$main_font: Vollkorn;
+
+ul, ol {
+  list-style: none;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  background-color: none;
+}
+
 body {
-  background-color: #f1f0ee;
-  color: black;
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 18px;
+  background-color: $light_grey;
+  margin: 0;
+  font-family: $main-font;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+.card {
+  background-color: white;
+  height: 350px;
+  overflow: auto;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+#whats-hot{
+  width: 10%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 40px;
+  line-height: .5;
 }
 
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
-}
-
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
 }
 
 div {

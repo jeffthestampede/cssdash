@@ -1,11 +1,34 @@
-<ul>
-<% if user_signed_in? %>
-  <li><%= current_user.username %></li>
-  <li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
-  <li><%= link_to("Logout", destroy_user_session_path, :method => "delete") %></li>
-<% else %>
-  <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-  <li><%= link_to("Login", new_user_session_path) %></li>
-<% end %>
-  <li><%= link_to("About Us", aboutus_path) %></li>
+<div id="nav_container">
+  <div class="container_12">
+  <a href="/"><span id="logo">css stache</span></a>
+
+
+  <div id="nav_links">
+  <ul>
+    <li><%= link_to("About Us", aboutus_path) %></li>
+    <li><% if user_signed_in? %>
+      <%= link_to 'New Content', new_content_path %>
+    <% end %></li>
+  <% if user_signed_in? %>
+    <li><%= link_to("Logout", destroy_user_session_path, :method => "delete") %></li>
+    <li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
+    <li><%= current_user.username %></li>
+  <% else %>
+    <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+    <li><%= link_to("Login", new_user_session_path) %></li>
+
+  <% end %>
+
   </ul>
+
+  <div id="search_bar">
+    <%= form_tag("/search", :method => "get") do %>
+    <input type="search" name="query" placeholder="Search for css">
+    <input type="image" name="submit" id="search_button" value="search" src="http://www.clker.com/cliparts/z/1/T/u/9/2/search-icon.svg">
+    <% end %>
+  </div>
+  </div>
+
+
+</div>
+</div>
