@@ -2,5 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #iframe-wrapper {
-  margin-left: 50px;
+  margin-left: 80px;
+  overflow: scroll;
+}
+
+#iframe {
+  width: 700px;
+  height: 300px;
 }
