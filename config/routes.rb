@@ -18,6 +18,8 @@ Cssdash::Application.routes.draw do
   get '/users/:id', :to => 'users#show'
   # About us
   get '/aboutus', :to => 'pages#aboutus'
+  # Tags
+  get '/tags/:tag', :to => 'pages#index', :as => :tag
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
