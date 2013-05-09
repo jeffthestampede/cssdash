@@ -1,5 +1,6 @@
 <%= render "layouts/navigation" %>
 <p>Profile Pic</p>
+<p><%= image_tag avatar_url(@user) %></p>
 <p>Username: <%= @user.username %></p>
 <p>Bio: <%= @user.bio %></p>
 <p>Twitter: <%= @user.twitter_link %></p>
