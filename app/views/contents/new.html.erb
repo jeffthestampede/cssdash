@@ -26,11 +26,11 @@
   </div>
   <div class="field">
     <%= f.label :html %><br />
-    <%= f.text_area :html %>
+    <%= f.text_area :html, :id => "htmloutput" %>
   </div>
   <div class="field">
     <%= f.label :css %><br />
-    <%= f.text_area :css %>
+    <%= f.text_area :css, :id => "cssoutput" %>
   </div>
   <div class="field">
     <%= f.label :visible %><br />
@@ -41,20 +41,8 @@
   </div>
 <% end %>
 
-<div id="page">
-        <div id="wrapper">
-            <div class="input htmloutput">
-                <label for="htmloutput"><button>HTML</button></label>
-                <textarea id="htmloutput"></textarea>
-            </div>
-            <div class="output css cssoutput">
-                <label for="cssoutput"><button>CSS</button></label>
-                <textarea id="cssoutput"></textarea>
-            </div>
-        </div>
-        <div id="result" class="output rendered"></div>
-        <iframe id="iframe"></iframe>
-    </div>
+<div id="iframe-wrapper">
+  <iframe id="iframe"></iframe>
 </div>
 
 <%= link_to 'Back', contents_path %>
