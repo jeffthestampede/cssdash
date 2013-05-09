@@ -4,42 +4,30 @@
   <b>Title:</b>
   <%= @content.title %> by <a href="/users/<%= @content.user.id %>"><%= @content.user.username %></a>
 </p>
-
 <p>
   <b>Description:</b>
   <%= @content.description %>
 </p>
-
+<p>
+  <b>Tag(s):</b>
+  <%= raw @content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %>
+</p>
 <p>
   <b>HTML:</b>
   <%= @content.html %>
 </p>
-
 <p>
   <b>CSS:</b>
   <%= @content.css %>
 </p>
-
-<p>
-  <b>Deleted:</b>
-  <%= @content.deleted %>
-</p>
-
-<p>
-  <b>Visible:</b>
-  <%= @content.visible %>
-</p>
-
 <p>
   <b>Favorites:</b>
   <%= @content.favorites %>
 </p>
-
 <p>
   <b>Created on:</b>
   <%= @content.created_on %>
 </p>
-
 <% if user_signed_in? && @content.user_id = current_user.id %>
   <%= link_to 'Edit', edit_content_path(@content) %> |
 <% end %>

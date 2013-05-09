@@ -1,21 +1,23 @@
 <div id="whats-hot">
-    <%= image_tag "hot_dog.svg" %>
-    what's hot
+  <%= image_tag "hot_dog.svg" %>
+  what's hot
 </div>
-
+<% if params[:tag] %>
+  <h2>tags / <%= params[:tag] %></h2>
+<% end %>
 <div>
 <% @contents.each do |content| %>
-    <div class="grid_4 card">
-    <p><%= link_to content.title, content %></p>
+  <div class="grid_4 card">
+    <p><%= link_to content.title, content %> by <a href="/users/<%= content.user.id %>"><%= content.user.username %></a></p>
     <p>Description: <%= content.description %></p>
     <p>HTML: <%= content.html %></p>
     <p>CSS: <%= content.css %></p>
-    <p><a href="/users/<%= content.user.id %>"><%= content.user.username %></a></p>
+    <p>Tag(s): <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
     <p>Views: <%= content.views %></p>
     <p>Favorites: <%= content.favorites %></p>
     <%#= link_to 'Show', content %>
     <%#= link_to 'Edit', edit_content_path(content) %>
     <%#= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
+  </div>
 <% end %>
 </div>
