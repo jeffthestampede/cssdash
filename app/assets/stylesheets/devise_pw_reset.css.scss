@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 50px;
+  margin: auto;
+}
+
+.pg_title {
+  font-family: "Roboto Slab";
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: lowercase;
+  text-align: center;
+  margin: 0;
+}
+
+.rule {
+  width: 100%;
+  border-bottom: 1px dotted black;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.form_title {
+  font-family: "Roboto Slab";
+  font-size: 10px;
+  font-weight: 600;
+  color: lighten(black, 60%);
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.form_field {
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  outline: none;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 18px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.bio_field {
+  @extend .form_field;
+  height: 80px;
+}
+
+.profile_img {
+  height: 220px;
+  width: 100%;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  outline: none;
+  display: inline-block;
+  margin-top: 18px;
+  margin-right: 20px;
+}
+
+.submit_btn input[type="submit"] {
+  height: 40px;
+  width: 100%;
+  color: white;
+  background-color: #f36c61;
+  border: 2px solid #df6359;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 18px;
+}
