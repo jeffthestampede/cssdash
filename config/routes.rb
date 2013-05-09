@@ -19,6 +19,8 @@ Cssdash::Application.routes.draw do
   # About us
   get '/aboutus', :to => 'pages#aboutus'
 
+  get '/search', :to => 'contents#search'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -89,4 +89,12 @@ class ContentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+    # @contents = Content.where("title LIKE '%?%' OR description LIKE '%?%'", params[:query], params[:query])
+    q = params[:query]
+    # q needs to be sql-escaped, otherwise this is good to go
+    @contents = Content.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+  end
+
 end
