@@ -1,6 +1,7 @@
 $light_grey: #f1f0ee;
 $dark_grey: #272623;
 $main_font: Vollkorn;
+$pink: #f36c61;
 
 ul, ol {
   list-style: none;
@@ -30,8 +31,9 @@ p, ol, ul, td {
   background-color: white;
   height: 350px;
   overflow: auto;
-  margin-bottom: 40px;
   padding: 20px;
+  margin: 10px 10px 40px 10px;
+  box-shadow: 0 1px 1px 1px #d7d7d7;
 }
 
 #whats-hot{
