@@ -19,18 +19,16 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+  <div class="field">
     <%= f.label :html %><br />
     <%= f.text_area :html %>
   </div>
   <div class="field">
     <%= f.label :css %><br />
     <%= f.text_area :css %>
-  </div>
-  <div class="field">
-    Tag(s):
-    <input type="text" name="content_tag_name"></input>
-    <%#= @content_tag.label :name %><br />
-    <%#= @content_tag.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :visible %><br />
