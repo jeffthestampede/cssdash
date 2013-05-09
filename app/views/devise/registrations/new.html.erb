@@ -11,9 +11,9 @@
       <%= devise_error_messages! %>
 
       <div class="grid_3">
-        <%= f.text_field :first_name, :class => "profile_box", :placeholder => "images goes here" %>
+        <%= f.text_field :first_name, :class => "profile_img", :placeholder => "images goes here" %>
       </div>
-      <div class="grid_5">
+      <div class="grid_5" style="margin-left:20px">
         <p class="form_title">tell us about yourself</p>
 
         <div>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="submit_btn">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "sign up" %>
         </div>
       </div>
     <% end %>
