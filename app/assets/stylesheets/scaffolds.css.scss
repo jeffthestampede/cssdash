@@ -27,6 +27,14 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 .card {
   background-color: white;
   height: 350px;
@@ -34,6 +42,23 @@ p, ol, ul, td {
   padding: 20px;
   margin: 10px 10px 40px 10px;
   box-shadow: 0 1px 1px 1px #d7d7d7;
+}
+
+.about_card {
+  margin-bottom: 20px;
+  background-color: white;
+  height: 300px;
+  width: 470px;
+  padding: 20px;
+  box-shadow: inset 0 1px 1px 1px #d7d7d7;
+  p {
+    margin: 5px 0 5px 20px;
+    width: 230px;
+  }
+}
+
+.about_container {
+  margin-top: 50px;
 }
 
 #whats-hot{
