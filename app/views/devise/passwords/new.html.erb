@@ -1,12 +1,23 @@
-<h2>Forgot your password?</h2>
+<div class="container_12">
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="grid_5 push_4">
+    <div class="icon">
+      <%= image_tag ("reset_arrow.png") %>
+    </div>
+    <p class="pg_title"> reset </p>
+    <div class="rule"></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+    <p class="form_title">Send password reset email</p>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
 
-<%= render "devise/shared/links" %>
+      <div class="grid_5">
+      <%= f.email_field :email, :autofocus => true, :class => "form_field", :placeholder => "email address" %></div>
+
+      <div class="grid_5 submit_btn"><%= f.submit "send email" %></div>
+
+    <% end %>
+  </div>
+
+</div>
