@@ -14,6 +14,10 @@ Cssdash::Application.routes.draw do
   get '/contents/:id/edit',  :to => 'contents#edit', :as => 'edit_content'
   # Show content
   get '/contents/:id', :to => 'contents#show', :as => 'content'
+  # Show HTML content
+  get '/contents/:id/html', :to => 'contents#html'
+  # Show CSS content
+  get '/contents/:id/css', :to => 'contents#css'
   # Update content
   put '/contents/:id', :to => 'contents#update'
   # Contributor profile

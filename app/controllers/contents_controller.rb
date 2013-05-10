@@ -27,6 +27,15 @@ class ContentsController < ApplicationController
     end
   end
 
+  def html
+    @content = Content.find(params[:id])
+    render :layout => false
+  end
+
+  def css
+    render :text => Content.find(params[:id]).css
+  end
+
   # GET /contents/new
   # GET /contents/new.json
   def new
