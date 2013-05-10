@@ -9,7 +9,7 @@
   <% @contents.each do |content| %>
   <div class="grid_4 card_container">
     <div class="card">
-      <div id="iframe_wrapper">
+      <div class="iframe_wrapper">
         <iframe src="<%= url_for :action => "html", :controller => "contents", :id => content.id %>">
         </iframe>
       </div>
@@ -19,9 +19,6 @@
         <p><%= content.description %></p>
         <p>Tags: <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p> 
       </div>
-
-
-      <!-- note that the location and order of these two hidden p tags are impt and referenced by number in pages.js -->
 
       <span class="mini_icons">
         <%= image_tag('eye_icon.svg')%> 23<%= content.views %>
