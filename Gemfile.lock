@@ -46,8 +46,6 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
-    editarea-rails (2.0.2)
-      rails (~> 3.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -123,7 +121,6 @@ DEPENDENCIES
   acts-as-taggable-on
   coffee-rails (~> 3.2.1)
   devise
-  editarea-rails
   jquery-rails
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
