@@ -43,14 +43,19 @@
   font-family: "Open Sans";
   font-weight: 500;
   font-size: 18px;
-  padding-left: 10px;
   margin-bottom: 15px;
+  padding: 5px;
   box-sizing: border-box;
 }
 
 .bio_field {
   @extend .form_field;
   height: 80px;
+}
+
+.desc_field {
+  @extend .form_field;
+  height: 95px;
 }
 
 .profile_img {
@@ -74,6 +79,7 @@
   font-family: "Open Sans";
   font-weight: 500;
   font-size: 18px;
+  margin-bottom: 15px;
 }
 
 #delete_btn input[type="submit"] {
@@ -87,4 +93,28 @@
   color: white;
   margin-top: -5px;
   margin-bottom: 75px;
+}
+
+.code_field {
+  height: 150px;
+  width: 100%;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  outline: none;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.big_renderer {
+  height: 275px;
+  width: 100%;
+  overflow: scroll;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
