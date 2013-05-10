@@ -1,23 +1,73 @@
-<p>Profile Pic</p>
-<p><%= image_tag avatar_url(@user) %></p>
-<p>Username: <%= @user.username %></p>
-<p>Bio: <%= @user.bio %></p>
-<p>Twitter: <%= @user.twitter_link %></p>
-<p>Github: <%= @user.github_link %></p>
-<p>Dribble: <%= @user.dribbble_link %></p>
+<div class="grid_12">
+  <div class="icon">
+    <%= image_tag ("reset_arrow.png") %>
+  </div>
+  <p class="pg_title"> hello </p>
+  <div class="rule"></div>
 
-<h1>Contributions</h1>
-<div>
-<% @contents.each do |content| %>
-    <p><%= link_to content.title, content %></p>
-    <p>Description: <%= content.description %></p>
-    <p>Tag(s): <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
-    <p>HTML: <%= content.html %></p>
-    <p>CSS: <%= content.css %></p>
-    <p>Views: <%= content.views %></p>
-    <p>Favorites: <%= content.favorites %></p>
-    <%#= link_to 'Show', content %>
-    <%#= link_to 'Edit', edit_content_path(content) %>
-    <%#= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <div class="grid_3">
+    <div class="profile_img">
+      <%= image_tag avatar_url(@user) %>
+    </div>
+    <p>
+      <p class="form_title">Username:</p>
+      <%= @user.username %>
+    </p>
+    <p>
+      <p class="form_title">Bio:</p>
+      <%= @user.bio %>
+    </p>
+    <p>
+      <p class="form_title">Twitter:</p>
+      <%= @user.twitter_link %>
+    </p>
+    <p>
+      <p class="form_title">Github:</p>
+      <%= @user.github_link %>
+    </p>
+    <p>
+      <p class="form_title">Dribble:</p>
+      <%= @user.dribbble_link %>
+    </p>
+  </div>
+  <div class="grid_8" style="margin-left:20px">
+    <p class="form_title">Contributions</p>
+
+    <div id="content_container">
+      <% @contents.each do |content| %>
+        <div class="grid_4 card individual_content" id="content<%= content.id %>">
+          <p><%= link_to content.title, content %></p>
+          <p>Description: <%= content.description %></p>
+          <p>Tag(s): <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
+          <p class="hidden"><%= content.html %></p>
+          <p class="hidden"><%= content.css %></p>
+          <!-- note that the location and order of these two hidden p tags are impt and referenced by number in pages.js -->
+          <p>Views: <%= content.views %></p>
+          <p>Favorites: <%= content.favorites %></p>
+          <p>
+            <div id="iframe-wrapper">
+              <iframe class="iframe" id="iframe<%= content.id %>"></iframe>
+            </div>
+          </p>
+
+          <textarea><%= content.html %></textarea>
+          <textarea><%= content.css %></textarea>
+
+          <%#= link_to 'Show', content %>
+          <% if current_user.id == @user.id %>
+            <%= link_to 'Edit', edit_content_path(content) %>
+          <% end %>
+
+          <%#= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+      </div>
+  </div>
 </div>
+
+
+<!--
+Note that how the tiles look in this page (the profile page) should match exactly
+how it looks on the home page (to be done)
+-->
+
