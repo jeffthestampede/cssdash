@@ -1,3 +1,4 @@
+
 $light_grey: #f1f0ee;
 $dark_grey: #272623;
 $main_font: Vollkorn;
@@ -70,8 +71,13 @@ p, ol, ul, td {
 }
 
 .card_container {
-  overflow: auto;
+  overflow: hidden;
   margin: 10px 10px 40px 10px;
+}
+
+.user_cards {
+  overflow: hidden;
+  margin: 10px 0px 30px 20px;
 }
 
 .card_description {
@@ -94,6 +100,15 @@ p, ol, ul, td {
   color: $pink;
   float: right;
   margin-left: 10px;
+}
+
+.profile_container {
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.username {
+  font-style: italic;
 }
 
 .about_card {
@@ -127,7 +142,7 @@ p, ol, ul, td {
   width: 10%;
   margin: auto;
   text-align: center;
-  line-height: .5;
+  line-height: 1;
 }
 
 #content_container {
