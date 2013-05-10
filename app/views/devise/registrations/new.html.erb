@@ -11,45 +11,35 @@
       <%= devise_error_messages! %>
 
       <div class="grid_3">
-        <%= f.text_field :first_name, :class => "profile_img", :placeholder => "images goes here" %>
+        <%= link_to image_tag(avatar_url(@user), :class => "profile_img"), "http://gravatar.com/emails/", :title => "Click to set your avatar at Gravatar.com", :target => '_blank' %>
       </div>
       <div class="grid_5" style="margin-left:20px">
         <p class="form_title">tell us about yourself</p>
-
         <div>
           <%= f.text_field :first_name, :class => "form_field", :placeholder => "First name" %>
         </div>
-
         <div>
           <%= f.text_field :last_name, :class => "form_field", :placeholder => "Last name" %>
         </div>
-
         <div>
           <%= f.text_area :bio, :cols => "30", :rows => "10", :class => "bio_field", :placeholder => "Brief intro" %>
         </div>
-
         <p class="form_title">account info</p>
-
         <div>
           <%= f.text_field :username, :autofocus => true, :class => "form_field", :placeholder => "username" %>
         </div>
-
         <div>
           <%= f.email_field :email, :class => "form_field", :placeholder => "email" %>
         </div>
-
         <div>
           <%= f.password_field :password, :class => "form_field", :placeholder => "password" %>
         </div>
-
         <div>
           <%= f.password_field :password_confirmation, :class => "form_field", :placeholder => "password one more time" %>
         </div>
-
         <div class="submit_btn">
           <%= f.submit "sign up" %>
         </div>
       </div>
     <% end %>
-
 </div>
