@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :profile_img_url, :first_name, :last_name, :bio, :twitter_link, :github_link, :dribbble_link
 
   validates_uniqueness_of :username
+  validates_presence_of :username
 
   has_many :contents
   has_many :favorites
