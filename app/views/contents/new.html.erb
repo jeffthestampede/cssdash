@@ -1,48 +1,54 @@
-<h1>New content</h1>
+<div class="grid_10 push_1">
+  <div class="icon">
+    <%= image_tag ("reset_arrow.png") %>
+  </div>
+  <p class="pg_title"> showcase </p>
+  <div class="rule"></div>
 
-<%= form_for(@content) do |f| %>
-  <% if @content.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
+  <%= form_for(@content) do |f| %>
+    <% if @content.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
 
-      <ul>
-      <% @content.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @content.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="grid_5">
+      <div class="grid_5">
+        <%= f.text_field :title, :class => "form_field", :placeholder => "Enter title" %>
+      </div>
+
+      <div class="grid_5">
+        <%= f.text_field :tag_list, :class => "form_field", :placeholder => "Enter tags (separated by commas)" %>
+      </div>
+    </div>
+    <div class="grid_5" style="margin-left:20px">
+      <%= f.text_area :description, :class => "desc_field", :placeholder => "Enter description" %>
+    </div>
+
+    <div>
+      <div class="grid_5">
+        <p class="form_title">HTML</p>
+        <%= f.text_area :html, :id => "htmloutput", :class => "code_field" %>
+      </div>
+      <div class="grid_5" style="margin-left:20px">
+        <p class="form_title">CSS</p>
+        <%= f.text_area :css, :id => "cssoutput", :class => "code_field" %>
+      </div>
+    </div>
+
+    <div id="iframe-wrapper" class="grid_10">
+      <iframe id="iframe" class="big_renderer"></iframe>
+    </div>
+
+    <div class="submit_btn grid_3 push_7 actions">
+      <%= f.submit "save and upload" %>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div>
-  <div class="field">
-    <%= f.label :html %><br />
-    <%= f.text_area :html, :id => "htmloutput" %>
-  </div>
-  <div class="field">
-    <%= f.label :css %><br />
-    <%= f.text_area :css, :id => "cssoutput" %>
-  </div>
-  <div class="field">
-    <%= f.label :visible %><br />
-    <%= f.check_box :visible %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 
-  <div id="iframe-wrapper">
-    <iframe id="iframe"></iframe>
-  </div>
-<% end %>
-
-<%= link_to 'Back', root_path %>
+</div>

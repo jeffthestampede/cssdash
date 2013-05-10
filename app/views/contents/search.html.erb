@@ -1,0 +1,33 @@
+<h1> search results page </h1>
+
+<!--
+This page was written by Eu-wen before the search functionality was yet functional.
+Note that the code below is basically copied over from the index page. we may need to come back to edit this stuff based on new code from the controller to make the search functionality work.
+ -->
+
+<div id="content_container">
+<% @contents.each do |content| %>
+  <div class="grid_4 card individual_content" id="content<%= content.id %>">
+
+    <p><%= link_to content.title, content %> by <a href="/users/<%= content.user.id %>"><%= content.user.username %></a></p>
+    <p>Description: <%= content.description %></p>
+    <p>Tag(s): <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
+    <p class="hidden"><%= content.html %></p>
+    <p class="hidden"><%= content.css %></p>
+    <p>Views: <%= content.views %></p>
+    <p>Favorites: <%= content.favorites %></p>
+
+    <p>
+      <div id="iframe-wrapper">
+        <iframe class="iframe" id="iframe<%= content.id %>"></iframe>
+      </div>
+    </p>
+
+    <textarea><%= content.html %></textarea>
+    <textarea><%= content.css %></textarea>
+    <%#= link_to 'Show', content %>
+    <%#= link_to 'Edit', edit_content_path(content) %>
+    <%#= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+</div>

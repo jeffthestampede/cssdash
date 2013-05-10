@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_for(@content) do |f| %>
+  <% if @content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% @content.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <p>
   <b>Title:</b>
   <%= @content.title %> by <a href="/users/<%= @content.user.id %>"><%= @content.user.username %></a>
@@ -12,18 +25,22 @@
   <b>Tag(s):</b>
   <%= raw @content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %>
 </p>
-<p>
-  <b>HTML:</b>
-  <%= @content.html %>
-</p>
-<p>
-  <b>CSS:</b>
-  <%= @content.css %>
-</p>
-<p>
-  <b>Favorites:</b>
-  <%= @content.favorites %>
-</p>
+
+  <div class="field">
+    <%= f.label :html %><br />
+    <%= f.text_area :html, :id => "htmloutput" %>
+  </div>
+  <div class="field">
+    <%= f.label :css %><br />
+    <%= f.text_area :css, :id => "cssoutput" %>
+  </div>
+
+<% end %>
+
+<div id="iframe-wrapper">
+  <iframe id="iframe"></iframe>
+</div>
+
 <p>
   <b>Created on:</b>
   <%= @content.created_on %>
