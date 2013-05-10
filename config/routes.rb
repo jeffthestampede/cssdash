@@ -1,5 +1,6 @@
 Cssdash::Application.routes.draw do
 
+
   # resources :comments
   # resources :favorites
   # resources :content_tags
