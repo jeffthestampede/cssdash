@@ -40,15 +40,8 @@
     <%= f.submit %>
   </div>
 
-  <% if Content.all.last.id == 0 %>
-    <% id_number = 1 %>
-  <% else %>
-    <% id_number = Content.all.last.id + 1 %>
-
-  <% end %>
-
   <div id="iframe-wrapper">
-    <iframe id="iframe<%= id_number %>"></iframe>
+    <iframe id="iframe"></iframe>
   </div>
 <% end %>
 

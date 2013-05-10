@@ -14,6 +14,7 @@
     <p>Tag(s): <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
     <p class="hidden"><%= content.html %></p>
     <p class="hidden"><%= content.css %></p>
+    <!-- note that the location and order of these two hidden p tags are impt and referenced by number in pages.js -->
     <p>Views: <%= content.views %></p>
     <p>Favorites: <%= content.favorites %></p>
 
