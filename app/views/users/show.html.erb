@@ -1,18 +1,18 @@
 <div class="grid_12">
-  <div class="icon">
-    <%= image_tag ("reset_arrow.png") %>
+  <div class="feature_icon">
+    <%= image_tag ("pub_profile_bubble.svg") %>
+    <div class="pg_title" style="margin-top:10px">hey there</div>
   </div>
-  <p class="pg_title"> hello </p>
+
   <div class="rule"></div>
 
-  <div class="grid_3">
+  <div class="grid_4 profile_container">
     <div class="profile_img">
       <%= image_tag avatar_url(@user) %>
     </div>
-    <p>
-      <p class="form_title">Username:</p>
-      <%= @user.username %>
-    </p>
+    <h2>
+      User { <span class="username"><%= @user.username %></span> }
+    </h2>
     <p>
       <p class="form_title">Bio:</p>
       <%= @user.bio %>
@@ -30,12 +30,11 @@
       <%= @user.dribbble_link %>
     </p>
   </div>
-  <div class="grid_8" style="margin-left:20px">
-    <p class="form_title">Contributions</p>
 
-    <div id="content_container">
+
+  <p class="form_title grid_8 right">Contributions:</p>
   <% @contents.each do |content| %>
-  <div class="grid_4 card_container">
+  <div class="grid_4 user_cards right">
     <div class="card">
       <div class="iframe_wrapper">
         <iframe src="<%= url_for :action => "html", :controller => "contents", :id => content.id %>">
@@ -59,8 +58,7 @@
     </div>
   </div>
   <% end %>
-</div>
-  </div>
+
 </div>
 
 
