@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="42.25px" height="30px" viewBox="-8.625 0 42.25 30" style="enable-background:new -8.625 0 42.25 30;"
-   xml:space="preserve">
-<path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" d="M20.473,27.215
-  c4.832,0,8.75-4.477,8.75-9.996c0-4.466-2.564-8.247-6.104-9.529c-1.746-3.31-4.693-5.484-8.035-5.484
-  c-3.351,0-6.305,2.187-8.05,5.512C6.18,7.399,5.271,7.222,4.324,7.222c-4.832,0-8.749,4.475-8.749,9.997
-  c0,5.344,3.671,9.709,8.29,9.982c0.152,0.008,0.306,0.014,0.459,0.014"/>
+	 width="42.25px" height="30px" viewBox="0 0 42.25 30" enable-background="new 0 0 42.25 30" xml:space="preserve">
+<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M29.811,28.184
+	c5.092,0,9.22-4.717,9.22-10.533c0-4.706-2.701-8.689-6.431-10.041c-1.841-3.488-4.946-5.778-8.468-5.778
+	c-3.531,0-6.644,2.305-8.482,5.808c-0.9-0.336-1.858-0.522-2.855-0.522c-5.092,0-9.219,4.715-9.219,10.534
+	c0,5.631,3.868,10.23,8.735,10.519c0.16,0.009,0.322,0.015,0.484,0.015"/>
 <g>
-  <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="17.932,17.207
-    12.775,12.212 8.175,17.207  "/>
-
-    <line style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="12.775" y1="12.212" x2="12.775" y2="27.795"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="27.133,17.638 
+		21.699,12.375 16.852,17.638 	"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="21.699" y1="12.375" x2="21.699" y2="28.795"/>
 </g>
 </svg>
