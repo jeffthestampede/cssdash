@@ -11,6 +11,7 @@
 <% @contents.each do |content| %>
     <p><%= link_to content.title, content %></p>
     <p>Description: <%= content.description %></p>
+    <p>Tag(s): <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
     <p>HTML: <%= content.html %></p>
     <p>CSS: <%= content.css %></p>
     <p>Views: <%= content.views %></p>
