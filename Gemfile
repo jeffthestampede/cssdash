@@ -4,6 +4,7 @@ gem 'devise'
 gem 'rails', '3.2.13'
 gem 'acts-as-taggable-on'
 gem "sass", :require => 'sass'
+gem 'rails_admin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
