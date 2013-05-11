@@ -1,20 +1,22 @@
 $light_grey: #f1f0ee;
 $dark_grey: #272623;
+$pink: #f36c61;
 $main_font: Vollkorn;
 
 #nav_container {
   height: 110px;
   width: 100%;
   background-color: $dark_grey;
-  margin-bottom: 20px;
   box-shadow: 0 1px 1px 1px #d7d7d7;
 }
 
 #nav_links {
   color: white;
-  width: 50%;
+  width: 40%;
+  padding-top: 5px;
   float: right;
-  a {color: white;}
+  a, a:visited {color: white;}
+  a:hover {text-decoration: underline;}
   li {
     margin-left: 20px;
     display: inline;
@@ -29,8 +31,7 @@ $main_font: Vollkorn;
     margin: 0;
     color: white;
     text-align: right;
-    background-color: $dark_grey;
-    border-bottom: 2px dotted white;
+    background: transparent;
     outline: none;
     width: 300px;
     font-size: 24px;
@@ -39,16 +40,40 @@ $main_font: Vollkorn;
 }
 
 #search_bar{
+  width: 90%;
   margin-top: 10px;
   float: right;
-  text-align: right;
+  border-bottom: 2px dotted white;
 }
 
 #search_button{
-  width: 6%;
+  width: 7%;
 }
 
 #logo{
   color: white;
   font-size: 80px;
+}
+
+#upload_btn {
+  margin-right: 240px;
+  float: right;
+  width: 130px;
+  text-align: center;
+  padding: 7px 8px 7px 0px;
+  background-color: $pink;
+  box-shadow: 3px 3px 4px #d7d7d7;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  a, a:visited {
+    color: white;
+  }
+  img {
+    vertical-align:text-top;
+    width: 20%;
+  }
 }

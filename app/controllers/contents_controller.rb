@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :show, :html, :css]
+  before_filter :authenticate_user!, :except => [:index, :show, :html, :css, :search]
 
   def view_user
   end

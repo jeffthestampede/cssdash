@@ -1,8 +1,9 @@
 Cssdash::Application.routes.draw do
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   # resources :comments
   # resources :favorites
-  # resources :content_tags
   # resources :contents
   devise_for :users
 
