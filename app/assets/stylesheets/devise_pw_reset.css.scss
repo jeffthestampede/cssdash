@@ -96,6 +96,7 @@
   font-weight: 500;
   font-size: 14px;
   box-sizing: border-box;
+  padding: 5px;
 }
 
 .big_renderer {
@@ -107,4 +108,11 @@
   box-shadow: inset 0px 1px 1px #d7d7d7;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.title_rule {
+  width: 100%;
+  border-bottom: 1px dotted #524D5D;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
