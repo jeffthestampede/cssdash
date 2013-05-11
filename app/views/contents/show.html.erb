@@ -45,7 +45,7 @@
   <b>Created on:</b>
   <%= @content.created_on %>
 </p>
-<% if user_signed_in? && @content.user_id = current_user.id %>
+<% if user_signed_in? && @content.user_id == current_user.id %>
   <%= link_to 'Edit', edit_content_path(@content) %> |
 <% end %>
 
