@@ -86,9 +86,16 @@ p, ol, ul, td {
   position: absolute;
   top: 10px;
   left: 10px;
+  a, a:visited{
+    color: $dark_grey;
+  }
   a:hover {
     text-decoration: underline;
   }
+}
+
+.card_title a, a:visited {
+  font-size: 50px;
 }
 
 .code_container {
