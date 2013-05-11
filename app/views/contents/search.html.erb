@@ -14,15 +14,14 @@
         <p><%= content.description %></p>
         <p>Tags: <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
       </div>
-
-      <span class="mini_icons">
-        <%= image_tag('eye_icon.svg')%> <%= content.views %>
-        <%= image_tag('heart_icon.svg')%> <%= content.favorites %>
-      </span>
     </div>
 
     <div class="card_header">
       <a href="/users/<%= content.user.id %>"><%= content.user.username %></a>
+      <span>
+        <%= image_tag('eye_icon.svg')%> <%= content.views %>
+        <%= image_tag('heart_icon.svg')%> <%= content.favorites %>
+      </span>
     </div>
   </div>
   <% end %>
