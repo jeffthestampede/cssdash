@@ -1,52 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="grid_10 push_1">
+  <div class="icon">
+    <%= image_tag ("detail_binoculars.svg") %>
+  </div>
+  <p class="pg_title"> showcase </p>
+  <div class="rule"></div>
 
-<%= form_for(@content) do |f| %>
-  <% if @content.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
+  <p id="notice"><%= notice %></p>
 
-      <ul>
-      <% @content.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@content) do |f| %>
+    <% if @content.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+        <ul>
+        <% @content.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+    <div class="grid_5">
+      <div class="grid_5">
+        <p class="form_title title_rule">Title</p>
+        <%= @content.title %> by
+        <a href="/users/<%= @content.user.id %>">
+          <%= @content.user.username %>
+        </a>
+         on <%= @content.created_on %>
+      </div>
+
+      <div class="grid_5" style="margin-bottom: 15px">
+        <p class="form_title title_rule">Tags</p>
+        <%= raw @content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %>
+      </div>
+    </div>
+    <div class="grid_5" style="margin-left: 20px; height:95px">
+      <p class="form_title title_rule">Description</p>
+        <%= @content.description %>
+      <br>
+    </div>
+
+    <div class="grid_10">
+      <div class="grid_5">
+        <p class="form_title">HTML</p>
+        <%= f.text_area :html, :id => "htmloutput", :class => "code_field" %>
+      </div>
+      <div class="grid_5" style="margin-left:20px">
+        <p class="form_title">CSS</p>
+        <%= f.text_area :css, :id => "cssoutput", :class => "code_field" %>
+      </div>
     </div>
   <% end %>
 
-<p>
-  <b>Title:</b>
-  <%= @content.title %> by <a href="/users/<%= @content.user.id %>"><%= @content.user.username %></a>
-</p>
-<p>
-  <b>Description:</b>
-  <%= @content.description %>
-</p>
-<p>
-  <b>Tag(s):</b>
-  <%= raw @content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %>
-</p>
-
-  <div class="field">
-    <%= f.label :html %><br />
-    <%= f.text_area :html, :id => "htmloutput" %>
+  <div id="iframe-wrapper" class="grid_10">
+    <iframe id="iframe" class="big_renderer"></iframe>
+    <div class="prefix_9">
+    <% if user_signed_in? && @content.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_content_path(@content) %>
+    <% end %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :css %><br />
-    <%= f.text_area :css, :id => "cssoutput" %>
-  </div>
-
-<% end %>
-
-<div id="iframe-wrapper">
-  <iframe id="iframe"></iframe>
-</div>
-
-<p>
-  <b>Created on:</b>
-  <%= @content.created_on %>
-</p>
-<% if user_signed_in? && @content.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_content_path(@content) %> |
-<% end %>
-
-<%= link_to 'Back', root_path %>
