@@ -1,17 +1,29 @@
-<h2>Sign in</h2>
+<div class="grid_4 push_4">
+  <div class="icon">
+    <%= image_tag ("sign_in_door.svg") %>
+  </div>
+  <p class="pg_title"> sign in </p>
+  <div class="rule"></div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div>
+      <p class="form_title">email</p>
+      <%= f.email_field :email, :autofocus => true, :class => "form_field" %>
+    </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <div>
+      <p class="form_title">password</p>
+      <%= f.password_field :password, :class => "form_field" %>
+    </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+    <% if devise_mapping.rememberable? -%>
+      <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+    <div class="grid_4 submit_btn">
+      <%= f.submit "Sign in" %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
