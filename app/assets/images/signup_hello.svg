@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   width="50px" height="30px" viewBox="0 0 50 30" style="enable-background:new 0 0 50 30;" xml:space="preserve">
+	 width="50px" height="30px" viewBox="0 0 50 30" style="enable-background:new 0 0 50 30;" xml:space="preserve">
 <style type="text/css">
 <![CDATA[
 @font-face{font-family:'OpenSans';src:url("data:;base64,\
@@ -2140,9 +2140,9 @@ prAaDhwEcxQcBMcVAAA=")}
 ]]>
 </style>
 <g>
-  <path style="fill:#FFC721;" d="M46.652,0H3.348C1.876,0,0.683,1.193,0.683,2.665v24.432c0,1.472,1.193,2.665,2.665,2.665h43.304
-    c1.472,0,2.665-1.193,2.665-2.665V2.665C49.317,1.193,48.124,0,46.652,0z M48.616,26.948H1.385V8.107h47.231V26.948z"/>
-  <rect x="1.385" y="8.107" style="fill:#FFFFFF;" width="47.231" height="18.841"/>
+	<path style="fill:#FFC721;" d="M46.652,0H3.348C1.876,0,0.683,1.193,0.683,2.665v24.432c0,1.472,1.193,2.665,2.665,2.665h43.304
+		c1.472,0,2.665-1.193,2.665-2.665V2.665C49.317,1.193,48.124,0,46.652,0z M48.616,26.948H1.385V8.107h47.231V26.948z"/>
+	<rect x="1.385" y="8.107" style="fill:#FFFFFF;" width="47.231" height="18.841"/>
 </g>
 <text transform="matrix(1 0 0 1 14.4443 6.7197)" style="font-family:'OpenSans'; font-size:6.7866;">HELLO</text>
 </svg>
