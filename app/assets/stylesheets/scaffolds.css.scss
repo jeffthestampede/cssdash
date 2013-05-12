@@ -12,6 +12,7 @@ ul, ol {
 a, a:hover, a:visited {
   text-decoration: none;
   background-color: none;
+  cursor: pointer;
 }
 
 body {
@@ -21,7 +22,8 @@ body {
 }
 
 .content_margin {
-  margin-top: 40px;
+  overflow: hidden;
+  margin-bottom: 100px;
 }
 
 * {
@@ -175,7 +177,7 @@ p, ol, ul, td {
 }
 
 .feature_icon {
-  width: 10%;
+  width: 100px;
   margin: auto;
   text-align: center;
   line-height: 1;

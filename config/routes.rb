@@ -22,6 +22,9 @@ Cssdash::Application.routes.draw do
   # Update content
   put '/contents/:id', :to => 'contents#update'
   # Contributor profile
+  get '/contents/:id/update_views', :to => 'contents#update_views', :as => 'update_views'
+  get '/contents/:id/update_likes', :to => 'contents#update_likes', :as => 'update_likes'
+
   get '/users/:id', :to => 'users#show'
   # About us
   get '/aboutus', :to => 'pages#aboutus'
