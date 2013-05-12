@@ -27,7 +27,7 @@
         <a href="/users/<%= @content.user.id %>">
           <%= @content.user.username %>
         </a>
-         on <%= @content.created_on %>
+          on <%= @content.created_on.strftime("%b %e, %Y") %>
       </div>
 
       <div class="grid_5" style="margin-bottom: 15px">
@@ -56,8 +56,28 @@
   <div id="iframe-wrapper" class="grid_10">
     <iframe id="iframe" class="big_renderer"></iframe>
     <div class="push_7">
-    <% if user_signed_in? && @content.user_id == current_user.id %>
-       <div id="edit_profile_btn"><%= link_to 'Edit', edit_content_path(@content) %></div>
-    <% end %>
+      <% if user_signed_in? && @content.user_id == current_user.id %>
+         <div id="edit_profile_btn"><%= link_to 'Edit', edit_content_path(@content) %></div>
+      <% end %>
     </div>
+  </div>
+
+  <div style="clear:both;">
+    <h2>Comments</h2>
+    <% @content.comments.each do |content| %>
+      <a href="/users/<%= content.user.id %>">
+        <%= content.user.username %>
+      </a>
+      <p><%= content.body %></p>
+      <p><%= (content.created_at).strftime("%b %e, %Y") %></p>
+    <% end %>
+
+    <%= form_for([@content, @content.comments.build]) do |f| %>
+      <div class="field">
+        <%= f.text_area :body %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
