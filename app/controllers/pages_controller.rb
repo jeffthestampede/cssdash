@@ -6,7 +6,8 @@ class PagesController < ApplicationController
     if params[:tag]
       @contents = Content.tagged_with(params[:tag])
     else
-      @contents = Content.all
+      # @contents = Content.all
+      @contents = Content.limit(15).order('favorites').reverse
     end
 
     respond_to do |format|
