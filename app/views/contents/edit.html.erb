@@ -36,11 +36,11 @@
     <div class="grid_10">
       <div class="grid_5">
         <p class="form_title">HTML</p>
-        <%= f.text_area :html, :id => "htmloutput", :class => "code_field" %>
+        <div id="editor" class="code_field" cols="40" id="htmloutput" name="content[css]" rows="20"></div>
       </div>
       <div class="grid_5" style="margin-left:20px">
         <p class="form_title">CSS</p>
-        <%= f.text_area :css, :id => "cssoutput", :class => "code_field" %>
+        <div id="editor2" class="code_field" cols="40" id="cssoutput" name="content[css]" rows="20"></div>
       </div>
     </div>
     <div id="iframe-wrapper" class="grid_10">
@@ -52,3 +52,20 @@
     </div>
   <% end %>
 </div>
+
+<script src="http://rawgithub.com/ajaxorg/ace-builds/master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.getSession().setTabSize(2);
+    html = <%= @html.gsub("\r","").split("\n").map {|s| "'" +  s + "\\n'+" }.join.html_safe %> '';
+    editor.setValue(html);
+    editor.setTheme("ace/theme/github");
+    editor.getSession().setMode("ace/mode/html");
+
+    var editor2 = ace.edit("editor2");
+    editor2.getSession().setTabSize(2);
+    editor2.setValue(css);
+    editor2.setTheme("ace/theme/github");
+    editor2.getSession().setMode("ace/mode/css");
+</script>

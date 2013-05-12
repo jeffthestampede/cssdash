@@ -50,6 +50,8 @@ class ContentsController < ApplicationController
   # GET /contents/1/edit
   def edit
     @content = Content.find(params[:id])
+    @html = @content.html
+    @css = @content.css
   end
 
   # POST /contents
