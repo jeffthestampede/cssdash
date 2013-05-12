@@ -34,11 +34,11 @@
     <div>
       <div class="grid_5">
         <p class="form_title">HTML</p>
-        <%= f.text_area :html, :id => "htmloutput", :class => "code_field" %>
+        <%= f.text_area :html, :id => "htmloutput", :class => "code_field markItUp" %>
       </div>
       <div class="grid_5" style="margin-left:20px">
         <p class="form_title">CSS</p>
-        <%= f.text_area :css, :id => "cssoutput", :class => "code_field" %>
+        <%= f.text_area :css, :id => "cssoutput", :class => "code_field markItUp" %>
       </div>
     </div>
 
@@ -52,3 +52,9 @@
   <% end %>
 
 </div>
+
+<script type="text/javascript" >
+   $(document).ready(function() {
+      $(".markItUp").markItUp(mySettings);
+   });
+</script>
