@@ -132,7 +132,6 @@ class ContentsController < ApplicationController
     end
   end
 
-
   # DELETE /contents/1
   # DELETE /contents/1.json
   def destroy
@@ -145,11 +144,11 @@ class ContentsController < ApplicationController
     end
   end
 
-   def search
+  def search
     # @contents = Content.where("title LIKE '%?%' OR description LIKE '%?%'", params[:query], params[:query])
     q = params[:query]
     # q needs to be sql-escaped, otherwise this is good to go
-    @contents = Content.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+    @contents = Content.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'").order('favorites').reverse
   end
 
 end
