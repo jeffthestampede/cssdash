@@ -14,7 +14,7 @@ $main_font: Vollkorn;
 
 #nav_links {
   color: white;
-  width: 40%;
+  /*width: 70%;*/
   padding-top: 5px;
   float: right;
   a, a:visited {color: white;}
@@ -26,30 +26,23 @@ $main_font: Vollkorn;
     white-space: nowrap;
     text-align: center;
   }
-  input[type="search"]{
+  .search{
     -webkit-appearance: none;
-    box-shadow: 0;
-    border: 0;
-    margin: 0;
-    color: white;
-    text-align: right;
-    background: transparent;
-    outline: none;
-    width: 300px;
-    font-size: 24px;
+    float: right;
+    color: grey;
+    border: none;
+    font-size: 18px;
+    padding: 6px 0 3px 28px;
     font-family: $main_font;
+    border-radius: 3px;
+    width: 100%;
   }
 }
 
-#search_bar{
-  width: 90%;
+#search_bar {
+  width: 100%;
   margin-top: 10px;
   float: right;
-  border-bottom: 2px dotted white;
-}
-
-#search_button{
-  width: 7%;
 }
 
 #logo{
@@ -58,7 +51,7 @@ $main_font: Vollkorn;
 }
 
 #upload_btn {
-  float: right;
+  left: 0;
   width: 130px;
   text-align: center;
   padding: 7px 8px 7px 0px;

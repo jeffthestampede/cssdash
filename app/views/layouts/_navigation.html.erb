@@ -16,10 +16,11 @@
 
       <div id="search_bar">
         <%= form_tag("/search", :method => "get") do %>
-        <input type="search" name="query" placeholder="Search for css">
-        <input type="image" name="submit" id="search_button"
-               value="search" src="<%=raw image_path('search_field_magnifying_glass.svg')%>">
-        <%=  %>
+        <input class="search" style="background: white
+                      url(<%=raw image_path('search_field_magnifying_glass.svg')%>)
+                      no-repeat; background-position-x: 8px;
+    background-position-y: 45%;"
+               type="search" name="query" placeholder="Search for css">
         <% end %>
       </div>
     </div>

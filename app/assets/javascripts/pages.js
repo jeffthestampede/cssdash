@@ -8,7 +8,6 @@ $(document).ready(function() {
       cardDescription.hide().fadeIn(fadeSpeed);
     });
     $(this).mouseleave(function () {
-      console.log("invoked");
       cardDescription.fadeOut(fadeSpeed, function() {cardDescription.addClass('hidden');});
     });
   });
