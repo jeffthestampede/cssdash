@@ -18,5 +18,6 @@
 /config/local_env.yml
 
 # Do we really want this?
+Gemfile.lock
 .DS_Store
 .DS_Store?
