@@ -18,19 +18,19 @@
       <%= @user.bio %>
     </p>
     <p>
-      <p class="form_title">Twitter:</p>
-      <%= @user.twitter_link %>
-    </p>
-    <p>
-      <p class="form_title">Github:</p>
-      <%= @user.github_link %>
-    </p>
-    <p>
-      <p class="form_title">Dribble:</p>
-      <%= @user.dribbble_link %>
+      <% unless @user.twitter_link=="" %>
+        <%= link_to image_tag("twitter.svg"), "http://www.twitter.com/#{@user.twitter_link}" %>
+      <% end %>
+      <% unless @user.github_link=="" %>
+        <%= link_to image_tag("github.svg"), "http://www.github.com/#{@user.github_link}" %>
+      <% end %>
+      <% unless @user.dribbble_link=="" %>
+        <%= link_to image_tag("dribbble.svg"), "http://www.dribbble.com/#{@user.dribbble_link}" %>
+      <% end %>
     </p>
 
-    <% if user_signed_in? && @user.username == current_user.username %>
+    <% if @user.username == current_user.username %>
+
       <div id="edit_profile_btn"><%= link_to("Edit Profile", edit_user_registration_path) %></div>
     <% end %>
   </div>
