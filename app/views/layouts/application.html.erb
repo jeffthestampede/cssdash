@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CSSDash</title>
+  <title>CSS Stache</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Vollkorn|Old+Standard+TT' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <%#= render "layouts/navigation" %>
   <%= render "layouts/navigation" %>
-  <div class="container_12 content_margin">
+  <div class="container_12">
+
   <%= yield %>
   </div>
 </body>

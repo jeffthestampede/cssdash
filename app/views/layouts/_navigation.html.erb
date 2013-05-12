@@ -1,45 +1,42 @@
+<div id="nav_background">
+<div class="container_12">
 <div id="nav_container">
-  <div class="container_12">
   <a href="/"><span id="logo">css stache</span></a>
+    <div id="nav_links">
+      <ul>
+        <li><%= link_to("about us", aboutus_path) %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to("logout", destroy_user_session_path, :method => "delete") %></li>
+        <li><a href="/users/<%= current_user.id %>">{ <%= current_user.username %> }</a>
+      <% else %>
+        <li><%= link_to("sign up", new_user_registration_path) %></li>
+        <li><%= link_to("login", new_user_session_path) %></li>
+      <% end %>
+      </ul>
 
-
-  <div id="nav_links">
-  <ul>
-    <li><%= link_to("about us", aboutus_path) %></li>
+      <div id="search_bar">
+        <%= form_tag("/search", :method => "get") do %>
+        <input type="search" name="query" placeholder="Search for css">
+        <input type="image" name="submit" id="search_button"
+               value="search" src="<%=raw image_path('search_field_magnifying_glass.svg')%>">
+        <%=  %>
+        <% end %>
+      </div>
+    </div>
+</div>
+<div id="upload_btn">
   <% if user_signed_in? %>
-    <li><%= link_to("logout", destroy_user_session_path, :method => "delete") %></li>
-    <li><a href="/users/<%= current_user.id %>">{ <%= current_user.username %> }</a>
-  <% else %>
-    <li><%= link_to("sign up", new_user_registration_path) %></li>
-    <li><%= link_to("login", new_user_session_path) %></li>
-
-  <% end %>
-
-  </ul>
-
-  <div id="search_bar">
-    <%= form_tag("/search", :method => "get") do %>
-    <input type="search" name="query" placeholder="Search for css">
-    <input type="image" name="submit" id="search_button"
-           value="search" src="<%=raw image_path('search_field_magnifying_glass.svg')%>">
-    <%=  %>
-    <% end %>
-  </div>
-  </div>
-
-
-</div>
-</div>
-
-<% if user_signed_in? %>
-  <div id="upload_btn">
     <%= image_tag('upload_cloud.svg') %>
     <%= link_to 'contribute', new_content_path %>
-  </div>
-<% else %>
-  <div id="upload_btn">
+  <% else %>
     <%= image_tag('upload_cloud.svg') %>
     <%= link_to 'contribute', new_user_session_path %>
-  </div>
-<% end %>
+  <% end %>
+</div>
+</div>
+</div>
+
+
+
+
 

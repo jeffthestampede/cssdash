@@ -3,12 +3,14 @@ $dark_grey: #272623;
 $pink: #f36c61;
 $main_font: Vollkorn;
 
-#nav_container {
-  height: 110px;
+#nav_background {
+  height: 112px;
   width: 100%;
   background-color: $dark_grey;
   box-shadow: 0 1px 1px 1px #d7d7d7;
+  margin-bottom: 40px;
 }
+
 
 #nav_links {
   color: white;
@@ -56,13 +58,12 @@ $main_font: Vollkorn;
 }
 
 #upload_btn {
-  margin-right: 240px;
   float: right;
   width: 130px;
   text-align: center;
   padding: 7px 8px 7px 0px;
   background-color: $pink;
-  box-shadow: 3px 3px 4px #d7d7d7;
+  box-shadow: 0px 2px 2px #d7d7d7;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
   -moz-border-radius-bottomright: 5px;
