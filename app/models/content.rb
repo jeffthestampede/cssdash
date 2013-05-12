@@ -3,5 +3,5 @@ class Content < ActiveRecord::Base
   acts_as_taggable
   belongs_to :user
   # has_many :content_tags
-  has_many :comments
+  has_many :comments, :dependent => :destroy
 end
