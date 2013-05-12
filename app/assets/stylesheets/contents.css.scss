@@ -90,6 +90,7 @@ p, ol, ul, td {
 
 .card_description {
   display: inline-block;
+  font-family: $header_font;
   margin-bottom: 10px;
   padding: 10px;
   position: relative;
@@ -103,12 +104,33 @@ p, ol, ul, td {
     color: $dark_grey;
   }
   a:hover {
-    text-decoration: underline;
+  	text-decoration: underline;
+  }
+  p {
+  	width: 90%;
   }
 }
 
+.card_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: $header_font;
+  height: 100%;
+  width: 100%;
+}
+
 .card_title a, a:visited {
-  font-size: 50px;
+	font-weight: 700;
+  font-size: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card_tags {
+	font-size: 14px;
+	position: relative;
+	z-index: 1;
 }
 
 .code_container {
@@ -141,14 +163,6 @@ p, ol, ul, td {
 	a, a:visited {
     color: grey;
   }
-}
-
-a.card_link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .profile_container {
@@ -226,7 +240,6 @@ pre {
 
 .field_with_errors {
   padding: 2px;
-  display: table;
 }
 
 .hidden {
@@ -297,6 +310,11 @@ pre {
 .desc_field {
   @extend .form_field;
   height: 95px;
+}
+
+.content_description {
+	overflow: auto;
+	height: 70px;
 }
 
 .profile_img {
