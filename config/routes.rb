@@ -1,10 +1,13 @@
 Cssdash::Application.routes.draw do
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   # resources :comments
   # resources :favorites
-  # resources :contents
+  resources :contents do
+    resources :comments
+  end
   devise_for :users
 
   root :to => 'pages#index'

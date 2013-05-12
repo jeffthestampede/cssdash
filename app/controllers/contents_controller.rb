@@ -56,12 +56,12 @@ class ContentsController < ApplicationController
   # POST /contents.json
   def create
     @content = Content.new(params[:content])
-    @content.visible = true;
-    @content.deleted = false;
-    @content.views = 0;
-    @content.likes = 0;
-    @content.favorites = 0;
-    @content.user_id = current_user.id;
+    @content.visible = true
+    @content.deleted = false
+    @content.views = 0
+    @content.likes = 0
+    @content.favorites = 0
+    @content.user_id = current_user.id
 
     respond_to do |format|
       if @content.save

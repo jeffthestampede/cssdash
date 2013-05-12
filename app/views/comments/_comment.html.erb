@@ -1,0 +1,20 @@
+<% div_for comment do %>
+  <p>
+  <p>
+    <b>Content Id:</b>
+    <%= comment.content_id %>
+  </p>
+
+  <p>
+    <b>User Id:</b>
+    <%= comment.user_id %>
+  </p>
+
+  <p>
+    <b>Body:</b>
+    <%= comment.body %>
+  </p>
+
+<%= link_to 'Edit', edit_content_comment_path(@content, comment) %> |
+<%= link_to 'Delete', content_comment_path(@content, comment), :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
