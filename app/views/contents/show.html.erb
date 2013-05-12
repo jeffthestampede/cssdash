@@ -1,8 +1,8 @@
 <div class="grid_10 push_1">
-  <div class="icon">
+  <div class="feature_icon">
     <%= image_tag ("detail_binoculars.svg") %>
   </div>
-  <p class="pg_title"> showcase </p>
+  <p class="pg_title"> detail </p>
   <div class="rule"></div>
 
   <p id="notice"><%= notice %></p>
@@ -55,9 +55,9 @@
 
   <div id="iframe-wrapper" class="grid_10">
     <iframe id="iframe" class="big_renderer"></iframe>
-    <div class="prefix_9">
+    <div class="push_7">
     <% if user_signed_in? && @content.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_content_path(@content) %>
+       <div id="edit_profile_btn"><%= link_to 'Edit', edit_content_path(@content) %></div>
     <% end %>
     </div>
   </div>

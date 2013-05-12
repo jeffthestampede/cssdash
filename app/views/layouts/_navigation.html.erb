@@ -36,5 +36,10 @@
     <%= image_tag('upload_cloud.svg') %>
     <%= link_to 'contribute', new_content_path %>
   </div>
+<% else %>
+  <div id="upload_btn">
+    <%= image_tag('upload_cloud.svg') %>
+    <%= link_to 'contribute', new_user_session_path %>
+  </div>
 <% end %>
 
