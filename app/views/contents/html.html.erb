@@ -1,4 +1,6 @@
 <head>
 <link rel="stylesheet" href="<%= url_for :action => "css", :id => @content.id%>">
 </head>
+<body style="overflow:hidden">
 <%=raw @content.html %>
+</body>
