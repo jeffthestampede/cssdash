@@ -1,11 +1,13 @@
+<% if (@contents == []) || (@content == "") %>
+  <div class="feature_icon">
+  <%= image_tag "search_results_magnifying_glass.svg" %>
+  </div>
+  <p class="pg_title"> no results </p>
+<% else %>
 <div class="feature_icon">
   <%= image_tag "search_results_magnifying_glass.svg" %>
 </div>
 <p class="pg_title"> search results </p>
-
-<% if (@contents == []) || (@content == "") %>
-  <p> No results found </p>
-<% else %>
 
 <div id="content_container">
   <% @contents.each do |content| %>
