@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :show, :html, :css, :search]
+  before_filter :authenticate_user!, :except => [:index, :show, :html, :css, :update_views, :search]
 
   def view_user
   end
@@ -58,6 +58,9 @@ class ContentsController < ApplicationController
     @content = Content.new(params[:content])
     @content.visible = true;
     @content.deleted = false;
+    @content.views = 0;
+    @content.likes = 0;
+    @content.favorites = 0;
     @content.user_id = current_user.id;
 
     respond_to do |format|
@@ -78,7 +81,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.update_attributes(params[:content])
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to @content }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -86,6 +89,49 @@ class ContentsController < ApplicationController
       end
     end
   end
+
+  # PUT /contents/1
+  # PUT /contents/1.json
+  def update_views
+    @content = Content.find(params[:id])
+
+    @content.views += 1
+
+    respond_to do |format|
+      if @content.update_attributes(params[:content])
+        format.html { redirect_to @content }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @content.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /contents/1
+  # PUT /contents/1.json
+  def update_likes
+    @content = Content.find(params[:id])
+
+    if !Favorite.exists?(:content_id => @content.id, :user_id => current_user.id)
+      @content.favorites += 1
+      @favorites = Favorite.new
+      @favorites.user_id = current_user.id
+      @favorites.content_id = @content.id
+      @favorites.save
+    end
+
+    respond_to do |format|
+      if @content.update_attributes(params[:content])
+        format.html { redirect_to @content }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @content.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   # DELETE /contents/1
   # DELETE /contents/1.json
