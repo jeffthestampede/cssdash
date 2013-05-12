@@ -1,10 +1,366 @@
 // Place all the styles related to the Contents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#iframe-wrapper {
 
+$light_grey: #f1f0ee;
+$dark_grey: #272623;
+$pink: #f36c61;
+$blue: #1352A2;
+$main_font: Vollkorn;
+$body_font: Open Sans;
+$header_font: Roboto Slab;
+
+
+ul, ol {
+  list-style: none;
 }
 
-#iframe {
+a, a:hover, a:visited {
+  text-decoration: none;
+  background-color: none;
+  cursor: pointer;
+}
 
+body {
+  background-color: $light_grey;
+  margin: 0;
+  font-family: $main-font;
+}
+
+.content_margin {
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p, ol, ul, td {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.rule {
+  width: 100%;
+  border-bottom: 1px dotted #524D5D;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background-color: white;
+  height: 280px;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: 0 1px 1px 1px #d7d7d7;
+  iframe {
+    margin: auto;
+    width: 100%;
+    height: 260px;
+    border-style: none;
+  }
+  img {
+    margin-left: 10px;
+  }
+}
+
+.card_container {
+  overflow: hidden;
+  margin: 10px 10px 40px 10px;
+}
+
+.user_cards {
+  overflow: hidden;
+  margin: 10px 0px 30px 20px;
+}
+
+.card_description {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: rgba(255,255,255, 0.8);
+  width: 100%;
+  height: 260px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  a, a:visited{
+    color: $dark_grey;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.card_title a, a:visited {
+  font-size: 50px;
+}
+
+.code_container {
+  textarea {
+    width: 49%;
+  }
+}
+
+.card_header {
+  margin-top: 10px;
+}
+
+.card_icons {
+	color: $pink;
+  float: right;
+  a, a:visited {
+    color: $pink;
+  }
+  a:hover {
+    font-style: italic;
+    color: $pink;
+  }
+  img {
+    margin-left: 10px;
+  }
+}
+
+.card_contributor {
+	display: inline-block;
+	a, a:visited {
+    color: grey;
+  }
+}
+
+a.card_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.profile_container {
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.username {
+  font-style: italic;
+}
+
+#edit_profile_btn {
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  color: white;
+  width: 220px;
+  background-color: $blue;
+  box-shadow: 0 1px 1px 1px #d7d7d7;
+  a, a:visited {
+    color: white;
+  }
+  a:hover {
+    color: $light_grey;
+  }
+}
+
+.about_card {
+  margin-bottom: 20px;
+  background-color: white;
+  height: 275px;
+  width: 470px;
+  box-shadow: 0 1px 1px 1px #d7d7d7;
+}
+
+.bio {
+  color: $dark_grey;
+  float: right;
+  width: 60%;
+  margin: 0;
+  p {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 16px;
+    line-height: 1;
+  }
+}
+
+.bio_image {
+  position: relative;
+  top: 125px;
+  left: 0px;
+}
+
+.feature_icon {
+  width: 100px;
+  margin: auto;
+  text-align: center;
+  line-height: 1;
+}
+
+#content_container {
+  margin-top: 30px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  display: table;
+}
+
+.hidden {
+  display: none;
+}
+
+#error_explanation {
+  width: 450px;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: $pink;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: disc;
+  }
+}
+
+.pg_title {
+  font-family: $header_font;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: lowercase;
+  text-align: center;
+  margin: 0;
+}
+
+.form_title {
+  font-family: $header_font;
+  font-size: 10px;
+  font-weight: 700;
+  color: lighten(black, 60%);
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.form_field {
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  outline: none;
+  font-family: $body_font;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.bio_field {
+  @extend .form_field;
+  height: 80px;
+}
+
+.desc_field {
+  @extend .form_field;
+  height: 95px;
+}
+
+.profile_img {
+  height: 220px;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  outline: none;
+  display: inline-block;
+}
+
+.submit_btn input[type="submit"] {
+  height: 40px;
+  width: 100%;
+  color: white;
+  background-color: #f36c61;
+  border: 2px solid #df6359;
+  font-family: $body_font;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+#delete_btn input[type="submit"] {
+  height: 40px;
+  width: 100%;
+  background-color: lighten(#d7d7d7, 5%);
+  border: 2px solid #d7d7d7;
+  font-family: $body_font;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  margin-top: -5px;
+  margin-bottom: 75px;
+}
+
+.code_field {
+  height: 150px;
+  width: 100%;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  outline: none;
+  font-family: $body_font;
+  font-weight: 500;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.big_renderer {
+  height: 275px;
+  width: 100%;
+  overflow: scroll;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.title_rule {
+  width: 100%;
+  border-bottom: 1px dotted #524D5D;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+textarea {
+	resize: none;
 }
