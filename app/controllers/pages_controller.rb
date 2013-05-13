@@ -7,7 +7,7 @@ class PagesController < ApplicationController
       @contents = Content.tagged_with(params[:tag]).order('favorites').reverse
     else
       # @contents = Content.all
-      @contents = Content.limit(15).order('favorites').reverse
+      @contents = Content.order('favorites').reverse.limit(24)
     end
 
     respond_to do |format|
