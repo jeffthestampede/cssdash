@@ -11,7 +11,24 @@ $(document).ready( function() {
     iframe.appendTo('#iframe').contents().find('head').html('<style>' + css + '</style>');
   }
 
-  clearInterval(myTimer);
-  myTimer = setInterval(htmlrender, 250);
+  htmlrender();
+
+  $('#htmloutput').focusin(function () {
+    clearInterval(myTimer);
+    myTimer = setInterval(htmlrender, 250);
+  });
+
+  $('#htmloutput').focusout(function () {
+    clearInterval(myTimer);
+  });
+
+  $('#cssoutput').focusin(function () {
+    clearInterval(myTimer);
+    myTimer = setInterval(htmlrender, 250);
+  });
+
+  $('#cssoutput').focusout(function () {
+    clearInterval(myTimer);
+  });
 
 });

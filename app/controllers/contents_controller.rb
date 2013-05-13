@@ -148,7 +148,9 @@ class ContentsController < ApplicationController
     # @contents = Content.where("title LIKE '%?%' OR description LIKE '%?%'", params[:query], params[:query])
     q = params[:query]
     # q needs to be sql-escaped, otherwise this is good to go
-    @contents = Content.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'").order('favorites').reverse
+    titles = Content.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+    tags = Content.tagged_with("#{q}")
+    @contents = (titles+tags).sort_by {|x| x.favorites}.reverse
   end
 
 end
