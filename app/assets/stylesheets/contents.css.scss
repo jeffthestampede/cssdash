@@ -90,7 +90,7 @@ p, ol, ul, td {
 
 .card_description {
   display: inline-block;
-  font-family: $header_font;
+  font-family: $main_font;
   margin-bottom: 10px;
   padding: 10px;
   position: relative;
@@ -108,6 +108,7 @@ p, ol, ul, td {
   }
   p {
   	width: 90%;
+    word-wrap: break-word;
   }
 }
 
@@ -120,11 +121,13 @@ p, ol, ul, td {
   width: 100%;
 }
 
-.card_title a, a:visited {
-	font-weight: 700;
-  font-size: 20px;
-  position: relative;
-  z-index: 1;
+.card_title {
+	a, a:visited {
+    font-weight: 700;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .card_tags {
@@ -162,6 +165,9 @@ p, ol, ul, td {
 	display: inline-block;
 	a, a:visited {
     color: grey;
+  }
+  a:hover {
+    font-style: italic;
   }
 }
 
@@ -315,6 +321,7 @@ pre {
 .content_description {
 	overflow: auto;
 	height: 70px;
+  word-wrap: break-word;
 }
 
 .profile_img {
