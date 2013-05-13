@@ -150,7 +150,7 @@ class ContentsController < ApplicationController
     # q needs to be sql-escaped, otherwise this is good to go
     titles = Content.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
     tags = Content.tagged_with("#{q}")
-    @contents = (titles+tags).sort_by {|x| x.favorites}.reverse
+    @contents = (titles+tags).uniq.sort_by {|x| x.favorites}.reverse
   end
 
 end
