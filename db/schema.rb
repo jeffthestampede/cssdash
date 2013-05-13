@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20130512070406) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "content_tags", :force => true do |t|
+    t.integer  "content_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "contents", :force => true do |t|
     t.string   "title"
     t.text     "description"
