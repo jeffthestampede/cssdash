@@ -24,15 +24,17 @@
       <div class="grid_5">
         <p class="form_title title_rule">Title</p>
         <%= @content.title %> by
-        <a href="/users/<%= @content.user.id %>">
-          <%= @content.user.username %>
-        </a>
+        <span class="username">
+          <a href="/users/<%= @content.user.id %>">
+            <%= @content.user.username %>
+          </a>
+        </span>
           on <%= @content.created_on.strftime("%b %e, %Y") %>
       </div>
 
       <div class="grid_5" style="margin-bottom: 15px">
         <p class="form_title title_rule">Tags</p>
-        <%= raw @content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %>
+        <span class="username"><%= raw @content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></span>
       </div>
     </div>
     <div class="grid_5" style="margin-left: 20px; height:95px">
@@ -41,7 +43,7 @@
       <br>
     </div>
 
-    <div class="grid_10">
+    <div class="grid_10" style="margin-top:5px">
       <div class="grid_5">
         <p class="form_title">HTML</p>
         <%= f.text_area :html, :id => "htmloutput", :class => "code_field" %>

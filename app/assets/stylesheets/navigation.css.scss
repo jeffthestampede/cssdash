@@ -1,7 +1,8 @@
 $light_grey: #f1f0ee;
 $dark_grey: #272623;
 $pink: #f36c61;
-$main_font: Vollkorn;
+$main_font: 'Source Sans Pro', sans-serif;
+$logo_font: Trocchi, serif;
 
 #nav_background {
   height: 112px;
@@ -11,10 +12,9 @@ $main_font: Vollkorn;
   margin-bottom: 40px;
 }
 
-
 #nav_links {
+  font-family: $logo_font;
   color: white;
-  /*width: 70%;*/
   padding-top: 5px;
   float: right;
   a, a:visited {color: white;}
@@ -33,7 +33,7 @@ $main_font: Vollkorn;
     color: grey;
     border: none;
     font-size: 18px;
-    padding: 6px 0 3px 28px;
+    padding: 3px 0 5px 28px;
     font-family: $main_font;
     border-radius: 3px;
     width: 100%;
@@ -43,9 +43,12 @@ $main_font: Vollkorn;
 #logo{
   color: white;
   font-size: 80px;
+  font-family: $logo_font;
 }
 
 #upload_btn {
+  margin-top: 8px;
+  font-family: $logo_font;
   left: 0;
   width: 130px;
   text-align: center;

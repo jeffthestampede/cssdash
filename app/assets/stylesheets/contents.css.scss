@@ -6,9 +6,11 @@ $light_grey: #f1f0ee;
 $dark_grey: #272623;
 $pink: #f36c61;
 $blue: #1352A2;
-$main_font: Vollkorn;
-$body_font: Open Sans;
-$header_font: Roboto Slab;
+$light_blue: #047FFF;
+$yellow: #ffc820;
+$main_font: 'Source Sans Pro', sans-serif;
+$header_font: Trocchi, serif;
+
 
 
 ul, ol {
@@ -24,7 +26,7 @@ a, a:hover, a:visited {
 body {
   background-color: $light_grey;
   margin: 0;
-  font-family: $main-font;
+  font-family: $main_font;
 }
 
 .content_margin {
@@ -80,7 +82,7 @@ p, ol, ul, td {
 
 .card_container {
   overflow: hidden;
-  margin: 10px 10px 40px 10px;
+  margin: 10px 10px 30px 10px;
 }
 
 .user_cards {
@@ -90,6 +92,7 @@ p, ol, ul, td {
 
 .card_description {
   display: inline-block;
+  overflow: hidden;
   font-family: $main_font;
   margin-bottom: 10px;
   padding: 10px;
@@ -104,7 +107,7 @@ p, ol, ul, td {
     color: $dark_grey;
   }
   a:hover {
-  	text-decoration: underline;
+    color: $blue;
   }
   p {
   	width: 90%;
@@ -123,7 +126,6 @@ p, ol, ul, td {
 
 .card_title {
 	a, a:visited {
-    font-weight: 700;
     font-size: 20px;
     position: relative;
     z-index: 1;
@@ -143,7 +145,7 @@ p, ol, ul, td {
 }
 
 .card_header {
-  margin-top: 10px;
+  margin: 10px 10px 0 10px;
 }
 
 .card_icons {
@@ -153,8 +155,7 @@ p, ol, ul, td {
     color: $pink;
   }
   a:hover {
-    font-style: italic;
-    color: $pink;
+    color: grey;
   }
   img {
     margin-left: 10px;
@@ -162,25 +163,33 @@ p, ol, ul, td {
 }
 
 .card_contributor {
+  font-family: $main_font;
 	display: inline-block;
 	a, a:visited {
     color: grey;
   }
   a:hover {
-    font-style: italic;
+    color: $pink;
   }
 }
 
 .profile_container {
   margin-top: 10px;
   padding: 20px;
+  font-family: $header_font;
 }
 
 .username {
-  font-style: italic;
+  a, a:visited {
+    color: $blue;
+  }
+  a:hover {
+    color: $light_blue;
+  }
 }
 
 #edit_profile_btn {
+  font-family: $header_font;
   text-align: center;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -205,15 +214,15 @@ p, ol, ul, td {
 }
 
 .bio {
+  font-family: $main_font;
   color: $dark_grey;
   float: right;
-  width: 60%;
-  margin: 0;
+  width: 57%;
+  margin-top: 20px;
   p {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 30px;
     font-size: 16px;
-    line-height: 1;
+    line-height: 1.3;
   }
 }
 
@@ -260,7 +269,6 @@ pre {
   background-color: #f0f0f0;
   h2 {
     text-align: left;
-    font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px;
@@ -277,16 +285,14 @@ pre {
 .pg_title {
   font-family: $header_font;
   font-size: 14px;
-  font-weight: 700;
   text-transform: lowercase;
   text-align: center;
-  margin: 0;
+  margin: 3px 0 0 0;
 }
 
 .form_title {
   font-family: $header_font;
   font-size: 10px;
-  font-weight: 700;
   color: lighten(black, 60%);
   text-transform: uppercase;
   margin-bottom: 0px;
@@ -300,7 +306,7 @@ pre {
   border: none;
   box-shadow: inset 0px 1px 1px #d7d7d7;
   outline: none;
-  font-family: $body_font;
+  font-family: $main_font;
   font-weight: 500;
   font-size: 18px;
   margin-bottom: 15px;
@@ -339,8 +345,7 @@ pre {
   color: white;
   background-color: #f36c61;
   border: 2px solid #df6359;
-  font-family: $main_font;
-  font-weight: 500;
+  font-family: $header_font;
   font-size: 18px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -351,8 +356,7 @@ pre {
   width: 100%;
   background-color: lighten(#d7d7d7, 5%);
   border: 2px solid #d7d7d7;
-  font-family: $body_font;
-  font-weight: 500;
+  font-family: $header_font;
   font-size: 18px;
   color: white;
   margin-top: -5px;
@@ -366,8 +370,7 @@ pre {
   border: none;
   box-shadow: inset 0px 1px 1px #d7d7d7;
   outline: none;
-  font-family: $body_font;
-  font-weight: 500;
+  font-family: $main_font;
   font-size: 14px;
   box-sizing: border-box;
   padding: 5px;
@@ -412,6 +415,12 @@ textarea {
   width: 100%;
   float: left;
   padding-top: 15px;
+  a, a:visited {
+    color: $blue;
+  }
+  a:hover {
+    color: $light_blue;
+  }
 }
 
 .comment_form {
@@ -431,11 +440,10 @@ textarea {
     height: 40px;
     width: 100%;
     color: white;
-    background-color: #ffc820;
+    background-color: $yellow;
     box-shadow: 0px 1px 1px #d7d7d7;
     border: none;
-    font-family: $main_font;
-    font-weight: 500;
+    font-family: $header_font;
     font-size: 18px;
     margin-bottom: 15px;
     cursor: pointer;
