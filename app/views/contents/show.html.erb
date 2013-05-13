@@ -55,29 +55,33 @@
 
   <div id="iframe-wrapper" class="grid_10">
     <iframe id="iframe" class="big_renderer"></iframe>
-    <div class="push_7">
-      <% if user_signed_in? && @content.user_id == current_user.id %>
-         <div id="edit_profile_btn"><%= link_to 'Edit', edit_content_path(@content) %></div>
-      <% end %>
-    </div>
+    <% if user_signed_in? && @content.user_id == current_user.id %>
+       <div id="edit_profile_btn"><%= link_to 'Edit', edit_content_path(@content) %></div>
+    <% end %>
   </div>
 
-  <div style="clear:both;">
-    <h2>Comments</h2>
+  <div class="comments_container">
+    <div class="rule"></div>
+    <p class="form_title">Comments: </p>
+    <div class="grid_5">
     <% @content.comments.each do |content| %>
+    <div class="comments">
       <a href="/users/<%= content.user.id %>">
         <%= content.user.username %>
-      </a>
+      </a> <%= (content.created_at).strftime("%b %e, %Y") %>
       <p><%= content.body %></p>
-      <p><%= (content.created_at).strftime("%b %e, %Y") %></p>
+    </div>
     <% end %>
+    </div>
 
+    <div class="comment_form grid_5">
     <%= form_for([@content, @content.comments.build]) do |f| %>
       <div class="field">
         <%= f.text_area :body %>
       </div>
-      <div class="actions">
+      <div class="actions comment_btn">
         <%= f.submit %>
       </div>
     <% end %>
+    </div>
   </div>
