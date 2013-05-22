@@ -1,6 +1,6 @@
 var myTimer;
 
-$(document).ready( function() {
+$(document).ready(function() {
 
   function htmlrender() {
     var html = editor.getValue();
@@ -10,6 +10,7 @@ $(document).ready( function() {
     iframe.appendTo('#iframe').contents().find('body').html(html);
     iframe.appendTo('#iframe').contents().find('head').html('<style>' + css + '</style>');
   }
+<<<<<<< HEAD
 
   clearInterval(myTimer);
   myTimer = setInterval(htmlrender, 250);
@@ -22,3 +23,10 @@ $(document).ready( function() {
   });
 
 });
+=======
+  htmlrender();
+  // Binds callable htmlrender to event 'input propertychange'
+  // htmlrender gets called everytime text input changes
+  $('.code_field').bind('input propertychange', htmlrender);
+});
+>>>>>>> d61a61e7b32941e1a08d116bac91052365341bed

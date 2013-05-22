@@ -6,22 +6,20 @@
       <ul>
         <li><%= link_to("about us", aboutus_path) %></li>
       <% if user_signed_in? %>
-        <li><%= link_to("logout", destroy_user_session_path, :method => "delete") %></li>
+        <li><%= link_to("sign out", destroy_user_session_path, :method => "delete") %></li>
         <li><a href="/users/<%= current_user.id %>">{ <%= current_user.username %> }</a>
       <% else %>
         <li><%= link_to("sign up", new_user_registration_path) %></li>
-        <li><%= link_to("login", new_user_session_path) %></li>
+        <li><%= link_to("sign in", new_user_session_path) %></li>
       <% end %>
       </ul>
 
-      <div id="search_bar">
-        <%= form_tag("/search", :method => "get") do %>
-        <input type="search" name="query" placeholder="Search for css">
-        <input type="image" name="submit" id="search_button"
-               value="search" src="<%=raw image_path('search_field_magnifying_glass.svg')%>">
-        <%=  %>
-        <% end %>
-      </div>
+      <%= form_tag("/search", :method => "get") do %>
+      <input id="search_bar" style="background: white
+                    url(<%=raw image_path('search_field_magnifying_glass.svg')%>)
+                    no-repeat; background-position-x: 8px; background-position-y: 45%;"
+             type="search" name="query" placeholder="Search for css">
+      <% end %>
     </div>
 </div>
 <div id="upload_btn">

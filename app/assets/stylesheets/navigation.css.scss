@@ -1,7 +1,8 @@
 $light_grey: #f1f0ee;
 $dark_grey: #272623;
 $pink: #f36c61;
-$main_font: Vollkorn;
+$main_font: 'Source Sans Pro', sans-serif;
+$logo_font: Trocchi, serif;
 
 #nav_background {
   height: 112px;
@@ -11,10 +12,9 @@ $main_font: Vollkorn;
   margin-bottom: 40px;
 }
 
-
 #nav_links {
+  font-family: $logo_font;
   color: white;
-  width: 40%;
   padding-top: 5px;
   float: right;
   a, a:visited {color: white;}
@@ -26,39 +26,30 @@ $main_font: Vollkorn;
     white-space: nowrap;
     text-align: center;
   }
-  input[type="search"]{
+  #search_bar {
     -webkit-appearance: none;
-    box-shadow: 0;
-    border: 0;
-    margin: 0;
-    color: white;
-    text-align: right;
-    background: transparent;
-    outline: none;
-    width: 300px;
-    font-size: 24px;
+    float: right;
+    margin-top: 10px;
+    color: grey;
+    border: none;
+    font-size: 18px;
+    padding: 3px 0 5px 28px;
     font-family: $main_font;
+    border-radius: 3px;
+    width: 100%;
   }
-}
-
-#search_bar{
-  width: 90%;
-  margin-top: 10px;
-  float: right;
-  border-bottom: 2px dotted white;
-}
-
-#search_button{
-  width: 7%;
 }
 
 #logo{
   color: white;
   font-size: 80px;
+  font-family: $logo_font;
 }
 
 #upload_btn {
-  float: right;
+  margin-top: 8px;
+  font-family: $logo_font;
+  left: 0;
   width: 130px;
   text-align: center;
   padding: 7px 8px 7px 0px;

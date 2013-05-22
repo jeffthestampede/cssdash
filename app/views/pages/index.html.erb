@@ -15,20 +15,17 @@
         </iframe>
       </div>
         <div class="card_description hidden">
-        <a class="card_link"href="<%= url_for :action => "update_views", :controller => "contents", :id => content.id %>">
-          <span></span></a>
-          <%= link_to content.title, content %>
+          <a class="card_link" href="<%= url_for :action => "update_views", :controller => "contents", :id => content.id %>"></a> 
+          <span class="card_title"><%= link_to content.title, content %></span>
           <p><%= content.description %></p>
-          <p>Tags: <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
-
+          <span class="card_tags">Tags: <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></span>
         </div>
     </div>
 
     <div class="card_header">
-      <a href="/users/<%= content.user.id %>"><%= content.user.username %></a>
-      <span>
+      <span class="card_contributor"><a href="/users/<%= content.user.id %>"><%= content.user.username %></a></span>
+      <span class="card_icons">
         <%= image_tag('eye_icon.svg')%> <%= content.views %>
-
         <% if current_user %>
           <% if Favorite.exists?(:content_id => content.id, :user_id => current_user.id) %>
             <%= image_tag('heart_icon.svg')%> <%= Favorite.where(:content_id => content.id).size %>
@@ -42,7 +39,6 @@
             <%= image_tag('heart_icon.svg')%> <%= Favorite.where(:content_id => content.id).size %>
           </a>
         <% end %>
-
       </span>
     </div>
   </div>

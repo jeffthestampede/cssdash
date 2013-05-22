@@ -1,3 +1,9 @@
+<% if (@contents == []) || (@content == "") %>
+  <div class="feature_icon">
+  <%= image_tag "search_results_magnifying_glass.svg" %>
+  </div>
+  <p class="pg_title"> no results </p>
+<% else %>
 <div class="feature_icon">
   <%= image_tag "search_results_magnifying_glass.svg" %>
 </div>
@@ -11,21 +17,34 @@
         <iframe src="<%= url_for :action => "html", :controller => "contents", :id => content.id %>">
         </iframe>
       </div>
-
-      <div class="card_description hidden">
-        <%= link_to content.title, content %>
-        <p><%= content.description %></p>
-        <p>Tags: <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></p>
-      </div>
+        <div class="card_description hidden">
+          <a class="card_link" href="<%= url_for :action => "update_views", :controller => "contents", :id => content.id %>"></a> 
+          <span class="card_title"><%= link_to content.title, content %></span>
+          <p><%= content.description %></p>
+          <span class="card_tags">Tags: <%= raw content.tag_list.map { |t| link_to t, tag_path(t)}.join(", ") %></span>
+        </div>
     </div>
 
     <div class="card_header">
-      <a href="/users/<%= content.user.id %>"><%= content.user.username %></a>
-      <span>
+      <span class="card_contributor"><a href="/users/<%= content.user.id %>"><%= content.user.username %></a></span>
+      <span class="card_icons">
         <%= image_tag('eye_icon.svg')%> <%= content.views %>
-        <%= image_tag('heart_icon.svg')%> <%= content.favorites %>
+        <% if current_user %>
+          <% if Favorite.exists?(:content_id => content.id, :user_id => current_user.id) %>
+            <%= image_tag('heart_icon.svg')%> <%= Favorite.where(:content_id => content.id).size %>
+          <% else %>
+            <a href="<%= url_for :action => "update_likes", :controller => "contents", :id => content.id %>">
+              <%= image_tag('heart_icon.svg')%> <%= Favorite.where(:content_id => content.id).size %>
+            </a>
+          <% end %>
+        <% else %>
+          <a href="<%= url_for :action => "update_likes", :controller => "contents", :id => content.id %>">
+            <%= image_tag('heart_icon.svg')%> <%= Favorite.where(:content_id => content.id).size %>
+          </a>
+        <% end %>
       </span>
     </div>
   </div>
   <% end %>
 </div>
+<% end %>
