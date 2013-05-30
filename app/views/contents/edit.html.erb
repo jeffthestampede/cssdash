@@ -36,7 +36,7 @@
     <div class="grid_10">
       <div class="grid_5">
         <p class="form_title">HTML</p>
-        <div id="editor" class="code_field" cols="40" id="htmloutput" name="content[css]" rows="20"></div>
+        <div id="editor" class="code_field" cols="40" id="htmloutput" name="content[html]" rows="20"></div>
       </div>
       <div class="grid_5" style="margin-left:20px">
         <p class="form_title">CSS</p>
@@ -58,13 +58,14 @@
 <script>
     var editor = ace.edit("editor");
     editor.getSession().setTabSize(2);
-    html = <%= @html.gsub("\r","").split("\n").map {|s| "'" +  s + "\\n'+" }.join.html_safe %> '';
+    html = '<%= @html.split("\r\n").join("' + '\\n' + '").html_safe %>';
     editor.setValue(html);
     editor.setTheme("ace/theme/github");
     editor.getSession().setMode("ace/mode/html");
 
     var editor2 = ace.edit("editor2");
     editor2.getSession().setTabSize(2);
+    css = '<%= @css.split("\r\n").join("' + '\\n' + '").html_safe %>';
     editor2.setValue(css);
     editor2.setTheme("ace/theme/github");
     editor2.getSession().setMode("ace/mode/css");
