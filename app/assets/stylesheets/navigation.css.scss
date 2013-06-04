@@ -42,12 +42,14 @@ $logo_font: Trocchi, serif;
 
 #logo{
   color: white;
-  font-size: 80px;
+  font-size: 40px;
   font-family: $logo_font;
+  position: relative;
+  top: 25px;
 }
 
 #upload_btn {
-  margin-top: 8px;
+  margin-top: 60px;
   font-family: $logo_font;
   left: 0;
   width: 130px;
@@ -61,6 +63,7 @@ $logo_font: Trocchi, serif;
   -moz-border-radius-bottomleft: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  font-size: 0.7em;
   a, a:visited {
     color: white;
   }
