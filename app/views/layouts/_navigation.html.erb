@@ -1,38 +1,37 @@
 <div id="nav_background">
-  <div class="container_12">
-    <div id="nav_container">
-      <a href="/"><span id="logo">HBS Entrepreneurs Connect</span></a>
-        <div id="nav_links">
-          <ul>
-            <li><%= link_to("about us", aboutus_path) %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to("sign out", destroy_user_session_path, :method => "delete") %></li>
-            <li><a href="/users/<%= current_user.id %>">{ <%= current_user.username %> }</a>
-          <% else %>
-            <li><%= link_to("sign up", new_user_registration_path) %></li>
-            <li><%= link_to("sign in", new_user_session_path) %></li>
-          <% end %>
-          </ul>
-
-          <%= form_tag("/search", :method => "get") do %>
-          <input id="search_bar" style="background: white
-                        url(<%=raw image_path('search_field_magnifying_glass.svg')%>)
-                        no-repeat; background-position-x: 8px; background-position-y: 45%;"
-                 type="search" name="query" placeholder="Search for css">
-          <% end %>
-        </div>
-    </div>
-
-    <div id="upload_btn">
+<div class="container_12">
+<div id="nav_container">
+  <a href="/"><span id="logo">css stache</span></a>
+    <div id="nav_links">
+      <ul>
+        <li><%= link_to("about us", aboutus_path) %></li>
       <% if user_signed_in? %>
-        <%= image_tag('upload_cloud.svg') %>
-        <%= link_to 'Add an Idea', new_content_path %>
+        <li><%= link_to("sign out", destroy_user_session_path, :method => "delete") %></li>
+        <li><a href="/users/<%= current_user.id %>">{ <%= current_user.username %> }</a>
       <% else %>
-        <%= image_tag('upload_cloud.svg') %>
-        <%= link_to 'Add an Idea', new_user_session_path %>
+        <li><%= link_to("sign up", new_user_registration_path) %></li>
+        <li><%= link_to("sign in", new_user_session_path) %></li>
+      <% end %>
+      </ul>
+
+      <%= form_tag("/search", :method => "get") do %>
+      <input id="search_bar" style="background: white
+                    url(<%=raw image_path('search_field_magnifying_glass.svg')%>)
+                    no-repeat; background-position-x: 8px; background-position-y: 45%;"
+             type="search" name="query" placeholder="Search for css">
       <% end %>
     </div>
-  </div>
+</div>
+<div id="upload_btn">
+  <% if user_signed_in? %>
+    <%= image_tag('upload_cloud.svg') %>
+    <%= link_to 'contribute', new_content_path %>
+  <% else %>
+    <%= image_tag('upload_cloud.svg') %>
+    <%= link_to 'contribute', new_user_session_path %>
+  <% end %>
+</div>
+</div>
 </div>
 
 
